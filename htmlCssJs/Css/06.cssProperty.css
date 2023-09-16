@@ -1,0 +1,89 @@
+/* 웹폰트 적용(제일 상단) */
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;200;300;400;500;600;700;800;900&display=swap');
+</style>
+/* 폰트 크기단위 px, em, rem, % */
+:root{
+    font-size: 30px;
+}
+
+/* 기본값은 16px */
+.font-css{
+    font-size:1.5em ;   
+    /* em은 부모태그의 배율 */
+}
+
+.parent{
+    font-size: 70px;
+}
+ .child{
+    font-size: 1.5rem;
+ }
+/* rem 최상단을 따라가겠다 (root) =변경하지않는한 16px을 따라감*/
+
+/* 폰트 굵기 단위  */
+
+.font-css{
+    /* font-weight: 500; */
+}
+
+/* 웹폰트 사용 */
+.font-css{
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 500;
+    font-style: italic;
+
+}
+.width-css{
+    background-color: blue;
+    color: white;
+    display:inline-block;
+    /* 인라인요소와 비슷하다 */
+    min-width: 500px;
+    max-width: 100%;
+    /* 가로스크롤은 유저에게 피로도를 준다 */
+    
+}
+
+.border-css{
+    /* border: 1px red dashed; */
+    border-color: red;
+    border-width: 1px;
+    border-style: dashed;
+    border-radius: 10px;
+    /* 모서리의 둥근정도 */
+
+}
+.circle{
+    /* 원그리기 */
+    background-color: red;
+    width: 100px;
+    height: 100px;
+    border-radius:100px ;
+}
+
+
+/* 중요!!!!!! */
+.margin-css{
+    margin: 10px 20px 30px 40px;
+    /* 2개 쓸경우:위아래 좌우 */
+    /* 4개 쓸경우:위에서 시작해 시계방향 */
+    /* 물론 따로지정하는 방법도 있다 */
+    border: 2px solid black;
+    background-color: blue;
+    color: white;
+
+    padding: 50px 20px;
+}
+.box-css{
+    background-color: blueviolet;
+    box-sizing: border-box;
+    width: 200px;
+    height: 200px;
+    padding: 20px;
+    margin: 20px;
+    /* 크기의 기준을 뭬에 맞춰 정하느냐에관한 설정 */
+    /* 계발초기에 정하고 시작한다!  */
+}
+
+
