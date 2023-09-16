@@ -1,0 +1,42 @@
+.divHover:hover{
+    background-color: red;
+}
+.divActive:active{
+    background-color: blue;
+    color: white;
+}
+.inputFocus:focus{
+    background-color: orange;
+}
+
+.a:visited{
+    color: red;
+}
+
+.fruits span:first-child{
+    color: red;
+}
+/* fruits 하위요소의 첫번째 자식이 span일경우 해석에 문제없지만 아닐경우
+해석에 문제가 생긴다 */
+
+.fruits p:last-child{
+    color: red;
+}
+/* 이런식으로 해석에 오류가 생기면 기능하지않는css가 된다 */
+
+.fruits span:nth-child(2){
+    color: red;
+}
+/* 두번째 자식이 span이기 때문에 적용이 된다 */
+
+.fruits_2 span:nth-child(2n+1){
+    color: red;
+}
+/* n은 0부터 시작한다.결국 홀수를 의미한다 */
+
+.fruits_2 :not(.waterM){
+    background-color: aqua;
+}
+.fruits *:not(span){
+    background-color: pink;
+}

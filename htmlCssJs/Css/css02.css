@@ -1,5 +1,20 @@
-div{
-    background-color: red;
-    width: 100px;
-    height: 100px;
+/* 하위 선택자 */
+div .apple{
+    color: rgb(107, 41, 41);
+}
+
+/* 자식선택자 */
+div > .aplle {
+    color: rgb(107, 41, 41);
+}
+
+/*인접 형제 선택자 */
+h1 + ul {
+    
+    color: blue;
+}
+
+/*  일반 형제 선택자 */
+h1 ~ ul{
+    font-size: 20px;
 }
