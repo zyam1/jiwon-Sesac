@@ -1,0 +1,21 @@
+*{
+    color: rgb(37, 37, 37);
+    /* 전체 선택자 */
+}
+
+div{
+    background-color: aqua;
+    /* 태그 선택자: 너무 기본적인 태그에 선택하게되면 효율이 좋지않다. */
+}
+
+.orange{
+    color: orange;
+    /* 클래스 선택자 */
+}
+
+.bg-red{
+    background-color: red;
+}
+#red{
+    color: red;
+}
