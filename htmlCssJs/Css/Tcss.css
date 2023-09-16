@@ -1,0 +1,21 @@
+.box::before{
+    content: "택시";
+}
+
+.box::after{
+    content: "빨리";
+}
+/* 실습2 */
+
+input[disabled]{
+    background-color: red;
+}
+
+[placeholder="이름"]{
+    background-color: orange;
+}
+
+/* 가상선택자 :not() */
+input:not([placeholder]){
+   background-color: blue;
+}
