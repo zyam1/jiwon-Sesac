@@ -1,0 +1,84 @@
+body {
+    margin: 0;
+}
+
+/* relative */
+.box {
+    /* static 기본값 */
+    /* position: static; */
+    width: 100px;
+    height: 100px;
+}
+
+.box-red {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: red;
+}
+
+.box-orange {
+    position: relative;
+    top: 20px;
+    /* bottom: 20px; */
+    /* left: 20px; */
+    right: 20px;
+    background-color: orange;
+}
+
+.box-yellow {
+    position: absolute;
+    background-color: yellow;
+}
+
+.sm-box{
+    width: 50px;
+    height: 50px;
+}
+
+.box-green {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    background-color: green;
+}
+
+.fixed {
+    position: fixed;
+    top: 0;
+    height: 50px;
+    width: 100%;
+    background-color: blue;
+}
+
+
+/*  */
+
+.container{
+    position: relative;
+    width: 500px;
+    height: 500px;
+    background-color: bisque;
+}
+.item{
+    width: 50px;
+    height: 50px;
+}
+.item-1{
+    position: relative;
+    left: 50px;
+    top: 30px;
+    background-color: rgb(130, 50, 50);
+}
+.item-2{
+    position: absolute;
+    right: 30PX;
+    bottom: 100PX;
+    background-color: rgb(73, 73, 140);
+}
+.item-3{
+    position: fixed;
+    right: 100px;
+    top: 100px;
+    background-color: rgb(74, 155, 128);
+}

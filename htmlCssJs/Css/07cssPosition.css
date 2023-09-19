@@ -1,0 +1,173 @@
+body {
+    margin: 0;
+}
+
+/* relative */
+.box {
+    /* static 기본값 */
+    /* position: static; */
+    width: 100px;
+    height: 100px;
+}
+
+.box-red {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background-color: red;
+}
+
+.box-orange {
+    position: relative;
+    top: 20px;
+    /* bottom: 20px; */
+    /* left: 20px; */
+    right: 20px;
+    background-color: orange;
+}
+
+.box-yellow {
+    position: absolute;
+    background-color: yellow;
+}
+
+.sm-box{
+    width: 50px;
+    height: 50px;
+}
+
+.box-green {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    background-color: green;
+}
+
+.fixed {
+    position: fixed;
+    top: 0;
+    height: 50px;
+    width: 100%;
+    background-color: blue;
+}
+
+
+/*  */
+
+.container{
+    position: relative;
+    width: 500px;
+    height: 500px;
+    background-color: bisque;
+}
+.item{
+    position: absolute;
+    width: 50px;
+    height: 50px;
+}
+.item-1{
+    position: relative;
+    left: 50px;
+    top: 30px;
+    background-color: rgb(130, 50, 50);
+}
+.item-2{
+    position: absolute;
+    right: 30PX;
+    bottom: 100PX;
+    background-color: rgb(73, 73, 140);
+}
+.item-3{
+    position: fixed;
+    right: 100px;
+    top: 100px;
+    background-color: rgb(74, 155, 128);
+}
+
+.red{
+    background-color: red;
+    z-index: 999;
+}
+.orange{
+    top: 20px;
+    left: 20px;
+    background-color: orange;
+}
+.yellow{
+    top: 40px;
+    left: 40px;
+    background-color: yellow;
+
+   
+}
+/*  */
+.Tcontainer{
+    height: 800;
+    width: 800;
+    position: relative;
+}
+.circle{
+    
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+}
+.c-1{
+    position: absolute;
+    z-index: 1;
+    background-color: rgb(80, 80, 147);
+}
+.c-2{
+    z-index: 2;
+    position: absolute;
+    left: 50px;
+    top: 40px;
+    background-color: rgb(74, 58, 173);
+}
+.c-3{
+    left: 90px;
+    top: 70px;
+    z-index: 3;
+    
+    position: absolute;
+    background-color: rgb(14, 14, 72);
+}
+.c-4{
+    z-index: 4;
+    left: 140px;
+    top: 65px;
+    position: absolute;
+    background-color: rgb(109, 137, 220);
+}
+.c-5{
+    left: 200px;
+    top: 65px;
+    z-index: 5;
+    position: absolute;
+    background-color: rgb(62, 131, 180);
+}
+.c-6{
+    z-index: 6;
+    left: 20px;
+    top: 20px;
+    position: absolute;
+    height: 40px;
+    width: 40px;
+    border-radius: 50%;
+    background-color: white;
+}
+.c-7{
+    left: 22px;
+    top: 25px;
+    z-index: 7;
+    position: absolute;
+    height:20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: rgb(33, 33, 33);
+}
+.img{
+    z-index: 4;
+    position: absolute;
+    top: 85px;
+}

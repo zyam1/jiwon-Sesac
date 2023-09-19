@@ -1,0 +1,14 @@
+.box{
+    
+    width: 100px;
+    height: 100px;
+}
+
+.box-red{
+    background-color: rgb(143, 54, 54);
+}
+
+.box-blue{
+    position: absolute;
+    background-color: rgb(54, 54, 122);
+}
