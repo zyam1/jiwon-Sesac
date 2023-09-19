@@ -1,0 +1,35 @@
+.img-skew:active{
+    transform: skew(10deg,10deg);
+}
+
+.img-rotate:hover{
+    transform: rotateY(30deg);
+    
+}
+.img-translate:active{
+    transform: translate(10px,10px);
+}
+.img-transform:active{
+    /* transform: translate(10px,10px);
+    transform: rotate(30deg);
+    이런식으로 적으면 안된다 */
+    transform: perspective(150px) rotateY(30deg);
+    /* 원근법에관한 코드 */
+    transition: transform 2s ease-in-out 0.2s;
+    /* transition:속성명 지속시간(필수) 타이밍함수 대기시간 */
+}
+
+/* 실습 */
+.back{
+    width: 100px;
+    height: 100px;
+    color: white;
+    background-color: black;
+}
+.play:hover{
+   width: 300px;
+   height: 300px;
+   transition: 1s 0.5s ;
+}
+
+/* 중요~~! display 속성 */
