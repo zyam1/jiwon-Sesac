@@ -1,37 +1,81 @@
-.container{
-    background-color: bisque;
-    width: 500px;
-    height:500px;
+.box1{
     display: flex;
-    margin-bottom: 5px;
 }
-.container-2{
-    background-color: bisque;
-    width: 500px;
-    height:500px;
+
+.container-1{
+    align-items: center;
     display: flex;
-    flex-direction: row-reverse;
-    margin-bottom: 5px;
-}
-.container-3{
-    background-color: bisque;
     width: 500px;
-    height:500px;
+    height: 500px;
+    background-color: antiquewhite;
+    margin: 10px;
+   flex-wrap:nowrap;
+}
+.container-11{
     display: flex;
     flex-direction: column;
-    margin-bottom: 5px;
+    align-items: center;
+    width: 500px;
+    height: 500px;
+    background-color: antiquewhite;
+    margin: 10px;
+   flex-wrap:nowrap;
+}
+.container-2{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    width: 500px;
+    justify-content: center;
+    height: 500px;
+    background-color: antiquewhite;
+    margin: 10px;
+}
+.container-22{
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    flex-direction: column;
+    justify-content: center;
+    width: 500px;
+    height: 500px;
+    background-color: antiquewhite;
+    margin: 10px;
+}
+.container-3{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: ;
+    width: 500px;
+    height: 500px;
+    background-color: antiquewhite;
+    margin: 10px;
+    align-items: center;
+}
+.container-32{
+
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: ;
+    width: 500px;
+    height: 500px;
+    background-color: antiquewhite;
+    margin: 10px;
+    align-items: center;
+    flex-direction: column;
 }
 .item{
-    width: 100px;
-    height: 100px;
-    
+    width:55px;
+    height:55px;
+    margin: 3px;
+    background-color: rgb(52, 161, 161);
 }
-.item-1{
-    background-color: rgb(198, 117, 117);
-}
-.item-2{
-    background-color: rgb(173, 54, 54);
-}
-.item-3{
-    background-color: rgb(125, 5, 5);
+.item2{
+    width:55px;
+    height:55px;
+    margin: 25px;
+    background-color: rgb(52, 161, 161);
+
 }
