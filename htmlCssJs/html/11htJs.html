@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- js : 참조 :내장방식, 링크 방식 -->
+    <script>
+        //내장방식 script 태그 내부에 js 문법
+        //head태그에 너무 많은 내용이 많아지면 빈화면을 볼일이 많아진다
+        //바디마지막을 선호한다
+    </script>
+
+    <script src="../Js/index.js">
+        //링크방식: 재사용할 요소를 만드는경우
+    </script>
+
+    <script>
+        //콘솔에 출력하겠다.(오류를 확인할때 사용)
+        console.log("hello");
+//--------------------JavaScript 변수----------------------------
+        //alert창에 출력하겠다
+        //alert("hello")
+        //키워드(var/let/const) 변수이름 = 값;
+        var name ="jiwon"; //선언과 할당을 동시에
+        
+        var example; //변수의 선언
+        example = 1 //변수의 할당
+      
+        //var : 재선언 가능, 재할당 가능
+        var name //name이라는 변수가 재선언 됨.
+        name="jiwon"
+        name="jiwon1"//재할당
+
+        //let :재선언 불가능 , 재할당은 가능
+        let name3="jiwon"
+        // let name3 <- 재선언이 불가능해서 풀경우 오류가 뜬다
+        name3="nowij";//재할당은 가능
+
+        //const : 재선언 불가능, 재할당 불가능 <-변하면 안되는값
+        // const name4;<-선언만하는것은 불가능
+        const name4 ="jiwon" //선언과 할당을 한번에 해줘야한다
+
+//--------------------JavaScript 자료형----------------------------
+
+        let age = 27;
+        console.log(name, name3, name4)
+        let num1 =99;
+        console.log("hello" , age)
+        console.log(name4 + age)
+        console.log("hello"+age)
+        console.log(`hello ${name4} bye bye`)// 문자를 쓰다가 변수를 쓰고싶을때 ${}문법을 사용할 수 있다.
+
+
+        let undef;
+        console.log(undef);//선언이 되어있지않아서 undefined라고 뜬다.
+
+       let testNull = null; //null은 의도적으로 비운값이다.
+       console.log(testNull);//의도적으로 비어있다는 뜻인 null이라고 뜬다
+//--------------------JavaScript 배열----------------------------
+        //하나의 변수에 여럭개의 값을 담고 싶을때, 배열이라는 자료형을 사용한다.
+        let name1 ="홍길동";
+        let name2 ="짱구";
+        let fruits =["사과","바나나","포도"] //오류를 생성하지않기위해 되도록이면 같은 자료형을 넣는것을 추천
+        console.log(fruits)//배열이 나온다
+        // 인덱싱: 배열의 원소에 접근할때 사용 변수이름[원소의 번호(인덱스)] <-숫자는 0부터 시작한다
+        console.log(fruits[0]);
+        console.log(fruits[1]);
+        console.log(fruits[2]);
+
+        //--------------------JavaScript 데이터 꾸러미----------------------------
+        //하나의 사물,사람 에대한 정보를 저장 
+        let cat ={
+            catName:"코코",
+            catAge:20,
+            isCute:true,
+            mew: function(){}//함수,매소드
+               }
+        console.log(cat.catName);
+        console.log(cat.isCute);
+
+        
+
+    </script>
+
+    <!-- 실습 -->
+
+    <script>
+        let mySelf={
+            name:"jiwon",
+            isCrew : true,
+            job :"student",
+            interest:["game","drawing","visitCafe","cat"]
+        }
+        
+
+        console.log(mySelf);
+       
+    </script>
+<!---------------------------------JavaScripts 형변환--------------------------------->
+    <script>
+        //let mathScore = prompt("수학 점수를 입력 하세요");
+        //let engScore = prompt("영어 점수룰 입력 하세요");88
+        //console.log(Number( mathScore) +Number(engScore) );
+
+
+        // 형변환 실습
+
+        let TmathScore ="77"
+        let TengScore ="88"
+
+        let score = Number(TmathScore)+Number(TengScore)
+
+        console.log(score/2);
+    </script>
+<!---------------------------------JavaScripts 연산자--------------------------------->
+    <script>
+        //연산자
+        //---------대입연산자 = --------
+        let numF=5;
+        let numS=numF;
+
+        //----------비교연산자 ---------
+        //== ,=== 
+        // "80" == 80
+        //  "80" ===80 //자료 형까지 비교한다
+        console.log("80"===80);
+        // >=, > , <= 
+        console.log(70 > 80) //false
+        // !=,!==
+        console.log("80"!=80);
+        console.log("80"!==90);//자료형까지 비교
+        //----------산술연산자------------
+        //+, -, *, /, %(나머지), **(거듭제곱)
+        console.log(70+30);
+        console.log(70-30);
+        console.log(70*30);
+        console.log(70/30);
+        console.log(70%30);
+        console.log(70**3);
+        //---------논리 연산자-----------
+        //!(not),&&(and),
+        //&&:앞,뒤 조건 모두 true =>true
+        let num=5
+        console.log(num>4 && num <8)
+        //||(or):앞,뒤 조건 둘 중 하나라도 true =>true
+        console.log(num==5|| num>8);
+        // ! (Not)
+        let bool =true;
+        console.log(!bool);
+        console.log(!(num>5))//이런식으로 많이 쓰이지는 않음
+
+        //---------연산자 줄여쓰기--------
+       
+        //자기 자신에 들어있던 값을 활용하여 연산 후,
+        //다시 자신에게 할당하려고 할 때
+        //num=num +5 =>num+=5
+
+        //---------증감 연산자------------
+        let num5 =5;
+        console.log(++num)//하나를 더하고 출력하기때문에 6이뜬다
+        console.log(num++)//출력한 후 더하기때문에 이전결과인 6이 뜬다
+        console.log(num)//윗줄에서 출력한 후 더했기때문에 7이뜬다
+        //앞에 붙냐 뒤에 붙냐에따라 값이 언제 바뀔지 '순서'가 달라진다
+        
+    </script>
+<!---------------------------------JavaScripts 함수--------------------------------->
+    <script>
+
+        funEx1();//명시적 함수는 선언부 위에써도 잘 작동한다.(호이스팅:함수와 관련된 것을 다 위로 빼기때문)
+        function funEx1(){
+            console.log("hello1");//함수이름은 기본적으로 camelCase 사용
+        }//명시적 함수 선언 
+
+
+        //funEx2();//읽히는 순간에 funEx2함수가 선언되지 않았기때문에 오류가 생긴다.
+
+        const funEx2=function(){
+            console.log("hello2");
+        }//함수 표현식 
+
+        const funEx3=()=>{
+            console.log("hello3");
+        }//또다른 함수 표현식 
+
+        // --------- 함수 호출 --------
+        funEx1(); //함수를 실행
+        funEx2();//
+
+        //----------함수 형태----------
+        //매개변수: 함수 외부에서 함수 내부로 값을 전달
+        // 1.매개변수x,반환값x
+        function exampleA(){
+            console.log("funExA");
+        }
+
+        // 2.매개변수x,반환값o
+        let number =5 ;
+        function funExB(a){
+            console.log(a);
+        };
+        funExB(number);
+
+        // 3.매개변수o,반환값x
+        function funExC(){
+            console.log(funExC);
+            return "hello"
+        }
+        let hello = funExC();
+        console.log(hello);
+        // 4.매개변수o,반환값o
+        function funExD(num1,num2){
+            console.log("funExD");
+            return num1 +num2;
+        };
+        let sum = funExD(2,3);
+        console.log(sum);//리턴값
+    </script>
+
+    <!-- 실습 -->
+    <script>
+        function multifly(numA, numB){
+            return numA*numB;
+        };
+        console.log(multifly(3,7));
+        console.log(multifly(2,2));
+
+        let square =function(numA){
+            console.log(numA**2);
+        }
+        square(4);
+        square(11);
+        square(5);
+
+    </script>
+
+
+</body>
+</html>

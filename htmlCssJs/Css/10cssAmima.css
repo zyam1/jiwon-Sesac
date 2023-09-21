@@ -1,0 +1,82 @@
+.box{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    animation: moveToRight 2s ease-in-out 1s infinite alternate;
+    /* 단축속성:name duration timing-function delay iteraion-count direction */
+
+}
+
+@keyframes moveToRight{
+    from{
+        left:0px
+        /* left 값은 포지션이 정해져야한다 */
+    }
+    to{
+      left: 100px;
+    }
+}
+
+/* 0%{
+ }
+ 
+ 10%{}
+ 
+ 이런식으로 구간을 나눌 수 있다*/
+
+ /* 실습 */
+ 
+ .circle{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: aquamarine;
+    animation: makeSquare 2s ease-in-out  infinite ;
+ }
+ @keyframes makeSquare{
+    0%{
+        left: 0px;
+        bottom: 0px;
+    }
+    25%{
+        left: 100px;
+        bottom: 0px;
+    }
+    50%{
+        left: 100px;
+        bottom: -100px;
+    }
+    75%{
+        left: 0px;
+        bottom: -100px;
+    }
+
+    100%{
+        left: 0px;
+        bottom: 0px;
+    }
+ }
+/* 실습 */
+
+p{
+    position: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start:0px;
+    margin-inline-end:0px;
+    animation: 3s rightleft;
+
+ }
+
+ @keyframes rightleft{
+    form{
+        margin-left: 100%;
+        width: 300%;
+    }
+    to{
+        margin-left:0%;
+        width: 100%;
+    }
+ }
