@@ -7,15 +7,32 @@
 </head>
 <body>
     <script>
-    for(i=2;i<10;i++){
-        console.log("---2단---")
-        for(j=1;j<10;j++){
-            console.log(`${i}x${j}=${i*j}`);
+        let number =[];
+        for(let i=1; i<=100; i++){
+            number.push(i);
+            //배열(numbers)의 마지막에
+            //인자로 넘어간 값(i)을 추가
         }
-    }
+        let j=0;
+        for(let i=0;i<100;i++){
+            j=j+number[i];
+        }
+        console.log(j);
 
+        let k=0;
+        for(let i of number){
+           k= k+i;
+        }
+        console.log(k);
+
+        let m=0;
+        number.forEach((n)=>{
+            m=m+n;
+        })
+        console.log(m);
+        
+
+        
     </script>
-
-
 </body>
 </html>
