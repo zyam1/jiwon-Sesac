@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="box" class="box hi">hello</div>
+    <span class="box">hello I'm span</span>
+    <input type="text" name="email"/>
+    <div id="box2">hi i am box2</div>
+    <script>
+        //요소 선택
+        console.log(document.documentElement);
+        console.log(document.body);
+        console.log(document.URL);
+        let elById = document.getElementById("box");
+        console.log(elById); 
+        let elByclass =document.getElementsByClassName("box");
+        console.log(elByclass[0]);
+        console.log(elByclass[1]);
+
+        let elByTag = document.getElementsByTagName("span")
+        console.log(elByTag[0]);
+
+        let elByName = document.getElementsByName("email");
+        console.log(elByName);
+        //선택자를 이용하여 요소를 선택
+        let elbyselector = document.querySelector(".box")//하나만 선택(여러개일경우 맨 위에있는 하나만 가져옴)
+        let elbyselectorAll= document.querySelectorAll(".box")//여러개 선택
+
+        console.log(elbyselector);
+        console.log(elbyselectorAll);
+
+        let elBox2 =document.getElementById("box2");
+
+        console.log (elBox2.innerText);//텍스트만 가지고옴
+        console.log (elBox2.innerHTML);//요소 모두를 가져옴
+
+        elBox2.innerText="hello jiwon";
+        elBox2.innerHTML="hello <b>jiwon<b>";//요소를 가져오기때문에 태그도 인식함
+        
+    </script>
+</body>
+</html>
