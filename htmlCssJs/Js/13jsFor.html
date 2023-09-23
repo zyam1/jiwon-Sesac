@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js반복문</title>
+</head>
+<body>
+    <script>
+
+        //---------------for문---------------------
+        //배열과 for문은 자주 같이쓰인다
+        //(초기값;조건문;증감문)
+        for(let i=0; i<10;i++ ){
+            //명령문(반복하고싶은 코드)
+            console.log(i,"안녕하세요")
+        }//조건이 거짓이 되는순간 for문에서 빠져나오게된다
+        console.log("끝");
+
+        //중첩 for문
+
+        for(let i=0; i<5;i++){
+            
+            for(let j=0;j<5;j++){
+                console.log(`i:${i},j:${j}이다`)
+            }
+        }
+        //초기값;조건식;증감문
+        for(let i;i<5;i++){}
+        for(let i;i<5;i=i+2){}
+        for(let i;i<5;i++){}
+    //---------------while문---------------------
+
+        //for문과while문의 차이
+        //for문:반복할 횟수를 특정할 수 있을 때
+        //while문:반복할 횟수를 특정 할 수 없을때
+        // for(let i=0; i<10;i++){
+        //     console.log(i);
+
+        // }
+        // let i=0;//초기식
+        // while(i<10){
+        //     //조건이 true일 경우 실행할 명령문
+        //     console.log(i);
+        //     i++;//증감문(*안쓰면 무한 루프에 빠짐)
+        // }
+
+        // let number =Number(prompt("양수를 입력하세요"))
+       
+        // //조금더 효율적인 코드
+        // while(number<0){
+        //     let number = Number(prompt("양수를 입력하세요"))
+        //     break;
+        // }
+        //------continue-------
+        for(let i=0;i<10;i++){
+            if(i%2==0)continue;
+            console.log(i);
+            //continue를 만난다면 바로 아래(여기)로 점프
+        }
+        //-----------do-while문------------
+        let k=0;
+
+        do{
+            //처음 한번은 무조건 실행 시키는 구조
+            k++
+            console.log(k);
+        }while(k<10)
+    </script>
+</body>
+</html>
