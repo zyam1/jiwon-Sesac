@@ -1,0 +1,47 @@
+.container{
+    width: 500px;;
+    height: 500px;
+    background-color: beige;
+    display: flex;
+}
+.box{
+    width: 100px;
+    height: 100px;
+}
+
+.red{
+    background-color: red;
+}
+.orange{
+    background-color: orange;
+}
+.yellow{
+    background-color: yellow;
+}
+/* @media 미디어유형 and (크기 규칙) */
+@media print{
+    .container{
+        background-color: blue;
+    }
+    /* 기존것은 그대로 두고 적은것만 덮어 쓰겠다 */
+   
+}
+
+
+/* 작은화면을 기준으로 보다가 크기를 키울경우 */
+@media screen and (min-width:700px){
+    /* 700이상일 경우 */
+    .container{
+        background-color: aquamarine;
+    }
+}
+
+@media screen and (max-width:700px){
+    /* 700이하일 경우 */
+    .yellow{
+        background-color: pink;
+    }
+    .container{
+        flex-direction: column;
+    }
+}

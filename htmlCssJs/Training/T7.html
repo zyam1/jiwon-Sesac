@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <style>
+        h1{
+            color: green;
+            
+        }
+        
+
+    </style>
+</head>
+<body>
+    <h1>2022년 7월</h1>
+    <table width="500" height="600">
+        <tr>
+            <th>日</th>
+            <th>月</th>
+            <th>火</th>
+            <th>水</th>
+            <th>木</th>
+            <th>金</th>
+            <th>土</th>
+        </tr>
+        <tr>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>1
+                
+            </td>
+            <td>2</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+            <td>8</td>
+            <td>9</td>
+        </tr>
+        <tr>
+            <td>10</td>
+            <td>11</td>
+            <td>12</td>
+            <td>13</td>
+            <td>14</td>
+            <td>15</td>
+            <td>16</td>
+        </tr>
+        <tr>
+            <td>17</td>
+            <td>18</td>
+            <td>19</td>
+            <td>20</td>
+            <td>21</td>
+            <td>22</td>
+            <td>23</td>
+        </tr>
+        <tr>
+            <td>24</td>
+            <td>25</td>
+            <td>26</td>
+            <td>27</td>
+            <td>28</td>
+            <td>29</td>
+            <td>30</td>
+        </tr>
+        <tr>
+            <td>31</td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+        </tr>
+
+
+    </table>
+
+    <div>
+        날짜:<input type="text" value="" name="day"  />
+        <br />
+        내용:<input type="text" name="text" />
+        <br/>
+        <button type="button" onclick="play()">작성</button>
+    </div>
+
+
+    <!-- 스크립트 -->
+    <script>
+        let a;
+        $("td").on("click",function(){
+            console.log(this);
+            console.log($(this).text());
+        })
+
+        $("td").on("click",function(){
+            console.log(this);
+            console.log($(this).text());
+            //td를 눌렀을때 날짜에 누른값 입력(추가)
+            //$(input[name="day"].val).append($(this).text);//이건 요소추가
+            $("input[name=day]").val($(this).text());
+            a = this;
+            console.log("입력값",a);
+        })
+       
+
+        // 날짜 내용에따라 내용에 적힌 글 달력에 추가 
+    
+        var play =function(){
+            //input 의 값을 가져온다
+            //값을 캘린더에 추가한다.
+
+           //$("input[name=text]").val;
+            
+            //값을 캘린더에 추가
+            a.append($("input[name=text]").val());
+
+        }
+    </script>
+
+
+</body>
+</html>

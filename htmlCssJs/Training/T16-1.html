@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            border-style: solid;
+        }
+    </style>
+</head>
+<body>
+    <div>작성자
+        <input type="text" id="name"/>
+    </div>
+    <div>내용
+        <input type="text" id="writeSomething"/>
+    </div>
+    <br>
+    <button type="button" onclick="makeNewTable()">작성</button>
+    <br>
+
+    <div class="Ntable">
+        <table >
+            <tr>
+                <th>번호</th>
+                <th>작성자</th>
+                <th>내용</th>
+                <th>작성일</th>
+            </tr>
+           
+            
+        </table>
+         
+    </div>
+   
+    
+
+<script>
+
+    /*
+    function makeNewTable(){
+        const Ntable1=document.getElementById("Ntable");//테이블 요소 가져오기
+
+        const tableName=document.getElementById("name").value;//이름가저오기
+        const tablewrite =document.getElementById("writeSomething").value//작성한 내용 가져오기
+        const newTable=document.createElement("tr");//행 만들기
+        const newTD=document.createElement("td");
+        Ntable1.append(newTable);//행 하나추가
+        Ntable1.children.append(newTD);//열 추가
+    }
+    */
+    function makeNewTable(){
+        const Ntable1=document.getElementById("Ntable");//테이블 요소 가져오기
+        const newTable=document.createElement("table").innerHTML={
+            <td></td>
+        }
+            //테이블 만들기
+        Ntable1.append(newTable);
+    }
+
+//차분하게 주석쓰면서 코딩하기
+
+</script>
+
+    
+</body>
+</html>

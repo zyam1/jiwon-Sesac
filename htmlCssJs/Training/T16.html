@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>값1:
+        <input type="text" id="input1"/>
+    </div>
+
+    <div>값2:
+        <input type="text" id="input2"/>
+    </div>
+
+    <div>연산자:
+        <input type="text" id="input3"/>
+    </div>
+
+    <div>결과:
+        <input type="text" id="input4" readonly/> <!--readonly읽기만 가능한 속성-->
+    </div>
+    <div>
+        <button type="button" onclick="math()">계산하기</button>
+        <button type="button" onclick="inputClear()">초기화</button>
+    </div>
+    
+    
+
+    <script>
+
+        function math (){
+           
+            const I1 = document.getElementById("input1").value;
+            const I2= document.getElementById("input2").value;
+            const I3= document.getElementById("input3").value;
+
+            let answer;
+
+            if(I3=='+'){
+               answer= Number(I1)+Number(I2);
+            }
+            else if(I3=='-'){
+               answer=  Number(I1)-Number(I2);
+            }
+            else if(I3=="/"){
+                answer=  Number(I1)/Number(I2);
+            }
+            else{
+                answer="존재하지않는 연산자 입니다";
+            }
+
+
+            document.getElementById("input4").value=answer;
+
+
+           
+        }
+
+        function inputClear (){
+            
+            document.getElementById("input1").value="";
+            document.getElementById("input2").value="";
+            document.getElementById("input3").value="";
+            document.getElementById("input4").value="";
+        }
+    </script>
+</body>
+</html>

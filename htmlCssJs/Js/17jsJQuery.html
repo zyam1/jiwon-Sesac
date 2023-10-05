@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <style>
+        .container{
+            width: 600px;
+            height: 400px;
+            background-color: beige;
+            display: flex;
+            flex-wrap: wrap;
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+        }
+        .red{
+            background-color: red;
+        }
+        .orange{
+            background-color: orange;
+        }
+        .yellow{
+            background-color: yellow;
+        }
+    </style>
+</head>
+<body>
+    
+    
+    <input type="text" name="name" id=""input value="jiwon" />
+    <button type="button" onclick="useVal()">val()사용하기</button>
+    <button type="button" onclick="useAttr()">attr()사용하기</button>
+    <br>
+    <span id="span1">hello</span>
+    <button type="button" onclick="useCss()">css함수 사용하기</button>
+    <button type="button" onclick="useText()">Text함수 사용하기</button>
+
+    <div class="container">
+        <div class="box red" id="red"></div>
+        <div class="box orange"></div>
+        <div class="box yellow"></div>
+    </div>
+
+    <button type="button" onclick="useAppend()">append()함수 사용하기</button>
+    
+    <button type="button" onclick="useRemove()">remove()함수 사용하기</button>
+    <button type="button" onclick="useParent()">요소 탐색하기</button>
+    <hr>
+    <button type="button" onclick="controlClass()">클래스조작하기</button>
+
+    <script>
+        function useVal(){
+        //jQuery 문법
+        // $(선택자).동작함수();
+        //document.get~~~/document.querySelector~~~
+        //.innerHTML /.append();
+        $("#input").append()
+
+        //id가 input인 태그를 선택하여, 그 input의 value를 가져오는 코드
+        const value=$("input").val();
+       // const value=document.getElementById("input").value;
+        console.log(value);
+
+        //id가 input인 태그를 선택하여, 그 input의 value를 설정하는 코드
+        $("#input").val("설정하고 싶은 값")
+        //document.getElementById("input").value="설정하고 싶은 값";
+
+        }
+
+        function useCss(){
+            //.css() : style을 변경
+            $("#span1").css("font-size","30px");
+            $("#span1").css("color", "blue");
+        }
+
+        function useAttr(){
+            $("#input").val("");
+            $("#input").attr("placeholder","이름을 입력하세요.");
+        }
+
+        function useText(){
+            $("#span1").text("hellooooooooooooooo");
+        }
+
+        function useAppend(){
+           //.container에 마지막 자식으로 추가
+            $(".container").append(`<div class="box red"></div>`);
+           //.container에 첫번째 자식으로 추가
+           $(".container").prepend(`<div class="box red"></div>`);
+
+           //기본적으로 javaScripts 문법을 따라가려한다.
+        }
+
+        function useRemove(){
+           // $(".box.orange").remove();
+
+            
+            $(".container").empty()//container의 값을 싹다 비울거다
+        }
+
+        function useParent(){
+            //parent()
+            console.log ("parent", $(".box.red").parent());//바로 위의 요소만 
+            //parents()
+            console.log ("parents", $(".box.red").parents());//조상까지 모두다
+            //next()
+            console.log ("next", $(".box.red").next());//바로앞 형제 
+            //prev()
+            console.log ("prev", $(".box.orange").prev());//바로
+            //children()
+            console.log ("children", $(".box.red").children());
+        }
+
+        function controlClass(){
+           // $(".box.red").addClass("");
+           const redBox=$("#red");
+           if(redBox.hasClass("red")){
+            redBox.removeClass("red");
+           }
+           else{
+           redBox.addClass("red");
+           }
+            
+        }
+
+
+        
+    </script>
+</body>
+</html>
