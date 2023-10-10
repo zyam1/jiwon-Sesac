@@ -1,0 +1,19 @@
+@font-face {
+    font-family: 'LeeSeoyun';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2202-2@1.0/LeeSeoyun.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+.nav-item {
+    font-family: 'LeeSeoyun';
+    color: white;
+    
+}
+
+.search {
+    border-radius: 5px;
+}
+
+.container{
+    width: 80%;
+}
