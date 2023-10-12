@@ -13,6 +13,8 @@ app.set("view engine","ejs");
 //만약 ./view 폴더로 바꾸고 싶다면 아래처럼 작성하면된다.
 //app.set("views", "./views")
 
+
+
 app.use("/static", express.static(__dirname +"/static"));
 // __dirname : ~~~~~/01-express/static   을 클라이언트가 /static 주소로 들어올 수 있다.(뒤를 가상으로 만들어주는 느낌이라고 생각하면 된다)
 //app.use("/public", express.static(__dirname +"/static"));

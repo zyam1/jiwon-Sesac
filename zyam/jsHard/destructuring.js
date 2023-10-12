@@ -43,3 +43,26 @@ const word2="xyz";
 
 const word3=[...word1,...word2];
 console.log("실습: ",word3)
+
+
+
+const obj2 ={
+    name: "jiwon",
+    gender : "여",
+    age : 99,
+}
+
+const obj3={
+    ...obj2,
+    test : "test",
+}
+
+console.log("obj3", obj3);
+
+const values =[10,20,30];
+function get(a,...rest){
+    console.log(a);
+    console.log(rest);//남은 인자들이 배열로 들어가게된다.
+}
+
+get(...values);
