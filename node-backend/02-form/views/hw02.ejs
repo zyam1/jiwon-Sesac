@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #errorID{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <form action="/hw02/post" method="post">
+        아이디<input type="text" name="id" pattern="^[a-z0-9]{5}$" required/>
+    </br>
+        비밀번호<input type="password" name="pw" required oninput="validCheckPW(this)" />
+        <div id="errorID"></div>
+    </br>
+        전화번호<input type="text" min="5" max="10" pattern="^\d{3}-\d{3,4}-\d{4}$" required/>
+    </br>
+        이름<input type="text" name="name" required/>
+    </br>
+        <fieldset>
+            <legend>성별</legend>
+        
+        <input type="radio" name="gender" id="men"><label for="men" required >남자</label>
+        <input type="radio"  name="gender" id="women"><label for="women">여자</label>
+        </fieldset>
+    </br>
+        <button type="submit">제출</button>
+    </form>
+
+
+    <script>
+        
+       function validCheckPW(el){
+        const regexPW = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/;
+        const value =el.value;
+        const error = document.getElementById("errorID")
+        //regexPW.test("검사하고 싶은 값")=>true or false return
+        if(regexPW.test(value)){
+            console.log("정규식 일치")
+            error.innerHTML=""
+        }
+        else{
+            console.log("정규식 불일치")
+            error.innerHTML="알파벳 (소문자,대문자) ,숫자,특수문자(!@#&중 하나를 포함 시켜 주세요)"
+        }
+       }
+    </script>
+</body>
+</html>

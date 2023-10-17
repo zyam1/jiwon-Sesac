@@ -37,6 +37,9 @@ function promise1(flag){
     })
 }
 
-promise1(true).then;
-//특정 함수가 return하는 값이 promise 객체일 경우, chaining으로 then, catch 라는 메소드
 
+//특정 함수가 return하는 값이 promise 객체일 경우, chaining으로 then, catch 라는 메소드
+promise1(true).then((result)=>{
+    console.log(result);
+    //reult 에는 resolve로 보낸 
+});
