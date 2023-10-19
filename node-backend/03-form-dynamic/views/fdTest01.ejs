@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Axios 회원가입</title>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+</head>
+<body>
+    <h1>axios get 회원가입</h1>
+    <form name="register">
+        이름<input type="text" name="name" />
+        <fieldset>
+            <legend>성별</legend>
+            <input type="radio" name="gender" id="men"><label for="men" required >남자</label>
+            <input type="radio"  name="gender" id="women"><label for="women">여자</label>
+        </fieldset>
+        <fieldset>
+            <legend>생년월일</legend>
+        <select class="form-control input-sm" id="year" name="year">
+        </select>
+        <select class="form-control input-sm" id="month" name="month">
+        </select>
+        <select class="form-control input-sm" id="day" name="day">
+        </select>
+        </fieldset>
+        <fieldset>
+            <legend>관심사</legend>
+            <input type="checkbox" name="hobby" value="여행">여행
+            <input type="checkbox"  name="hobby" value="패션">패션
+            <input type="checkbox" name="hobby" value="음식">음식
+        </fieldset>
+        <br/>
+        <button type="button" onclick="axiosGet()">회원가입</button>
+        <hr />
+        <h3 id="result"></h3>
+
+    </form>
+    <script>
+        //-----------------------------------------------------------------------------------------------------
+        $(document).ready(function(){
+            setDateBox();
+           
+        });
+        function setDateBox(){
+            var dt = new Date();
+            var year = dt.getFullYear();
+        
+            $("#year").append("<option value=''>년도</option>");
+            for(var y = (year-100); y <= (year+5); y++){
+                $("#year").append("<option value='"+ y +"'>"+ y + " 년" +"</option>");
+            }
+            
+            $("#month").append("<option value=''>월</option>");
+            for(var i = 1; i <= 12; i++){
+                if(String(i).length == '1'){
+                    $("#month").append("<option value='"+"0" + i +"'>"+"0" + i + "월" +"</option>");
+                }else{
+                    $("#month").append("<option value='"+ i +"'>"+ i + "월" +"</option>");
+                }
+            }
+        
+            $("#day").append("<option value=''>일</option>");
+            for(var d = 1; d <= 31; d++){
+                if(String(i).length == '1'){
+                    $("#day").append("<option value='"+"0" + d +"'>"+"0" + d + "일" +"</option>");
+                }else{
+                    $("#day").append("<option value='"+ d +"'>"+ d + "일" +"</option>");
+                }
+            }
+        }
+            //-----------------------------------------------------------------------------------------------------
+            //axios사용
+           
+            function getData() {
+                const form = document.forms["register"];//폼을 선택 한다.
+
+                
+                
+
+                const data = {
+                    name: form.name.value,
+                    gender: form.gender.value,
+                    name: form.name.value,
+                    year:form.year.value,
+                    month:form.month.value,
+                    day:form.day.value,
+                    hobby:form.hobby.value
+
+                }
+
+                return data;
+            }
+            // function ajaxGet() {
+            //     const form = document.forms["register"];
+        
+                    
+            //     const data = getData();
+            //     $.ajax({
+            //     type: "GET", // 폼 속성 중 method
+            //     url: "/ajax", // 폼 속성 중 action
+            //     data: data,
+            //     // url: `/ajax?id=${data.id}&pw=${data.pw}&name=${data.name}`,
+            //     success: function(result) { // 응답을 성공적으로 받았을 경우에 대한 이벤트 핸들러
+            //         // 매개변수(result)에 응답이 들어옴
+            //         console.log(result);
+            //         const {
+            //         name,
+            //         gender,
+            //         hobby,
+            //         year
+
+            //         } = result;
+            //         $("#result").html(`ajax get 요청 성공! ${year}년도에 태어난${hobby}을 좋아하는  ${name}(${gender})님 환영합니다.`)
+            //     }
+            //     })
+            // }
+        function axiosGet() {
+            const data = getData();
+
+            // axios 함수는 promise 객체를 return
+            axios({
+                method: "GET",
+                url: "/axiosGetTest",
+                params: data // get 요청으로 데이터 보낼 때 params 사용
+                // params 대신 url에 query를 직접 작성해도 됨
+                }).then((res) => {
+                // 서버에서 보내준 응답이 res에 담김
+                console.log("res", res)
+                console.log("res.data", res.data)
+                const {
+                    name,
+                    gender,
+                    hobby,
+                    year
+                } = res.data
+
+                $("#result").html(`axios get 요청 성공! ${year}년도에 태어난 ${name}님 환영합니다.`)
+                })
+        }    
+
+
+        
+        
+        </script>
+        
+  </body>
+</html>
