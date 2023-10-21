@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Document</title>
+    <style>
+       
+        .container{
+            background-color: rgb(224, 215, 204);
+            width: 500px;
+            height:800px;
+            margin: 100px;
+            border-radius: 50px;
+            display: flex;
+            justify-content: center;
+            flex-direction:column;
+            align-items:center
+        }
+        .in{
+            text-align: center;
+        }
+
+    </style>
+</head>
+<body>
+    <form name="dynamic-upload">
+        <input type="text"name="id" />
+        <br/>
+        <input type="password" name="pw"/>
+        <br/>
+        <input type="text" name="name"/>
+        <br/>
+        <input type="text" name="age"/>
+        <br/>
+        <input type="file"name="userphoto" >
+        <br/>
+        
+        <button type="button" onclick="photoUpload()">(동적 폼 전송)회원가입</button>
+    </form>
+    <div id="dynamic-upload-result"></div>
+
+    <script>
+        function photoUpload() {
+          const form = document.forms["dynamic-upload"];
+  
+          const formData = new FormData();
+          // FormData객체의 append 메소드는 데이터를 추가할 떄 사용
+         // formData.append("title", form.title.value);
+          // type이 file인 input태그 선택해서 files 접근 해보면
+          // console.log("value", form.userfile.value)
+          
+          formData.append("userphoto", form.userphoto.files[0])
+          formData.append("id",form.id.value)
+          formData.append("pw",form.pw.value)
+          formData.append("name",form.name.value)
+          formData.append("age",form.age.value)
+
+
+          
+          // 아래 방식은 이미지 데이터를 정상적으로 처리할 수 없음.
+          // const data = {
+          //     title: form.title.value,
+          //     userfile: form.userfile.value
+          // }
+  
+          axios({
+            method: "post",
+            url: "/test01/photoD",
+            data: formData,
+            headers: {
+              "Content-type": "multipart/form-data"
+            }
+          }).then((res) => {
+            console.log(res.data)
+            const result = document.getElementById("dynamic-upload-result")
+            result.innerHTML = `<img src="/${res.data.src}" width="150"/><br> <p>비밀번호:${res.data.pw}</p><br><p>이름:${res.data.name}</p><br><p>나이:${res.data.age}</p><br><h2>${res.data.id}님 환영합니다!</h2>`
+            // result.innerHTML=`<br> <p>비밀번호:${res.data.pw}</p>`
+            // result.innerHTML=`<br><p>이름:${res.data.name}</p>`
+            // result.innerHTML=`<br><p>나이:${res.data.age}</p>`
+            // result.innerHTML=`<br><h2>${res.data.id}님 환영합니다!</h2>`
+
+          })
+        }
+      </script>
+</body>
+</html>
+
+
+
+
+
+
