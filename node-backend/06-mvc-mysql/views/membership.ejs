@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입,로그인</title>
+</head>
+<body>
+    <fieldset>
+        <legend>회원 정보</legend>
+        <form name="member-value">
+            아이디<input type="text" name="id" />
+            비밀번호<input type="password" name="pw" />
+            <button type="button" onclick="createId()">회원가입</button>
+            <button type="button" onclick="login()">로그인</button>
+        </form>
+    </fieldset>
+   
+
+
+    <script>
+        //-------------------회원 가입-------------------
+        function createId(){
+            //1.id, pw값을 axios를 통해서 서버로 가져온다
+            const form =document.forms["member-value"]
+            const data={
+                id:form.id.value,
+                pw:form.pw.value
+            }
+
+            axios({
+                method:"post",
+                url:"/newMember",
+                data:data
+            }).then((res)=>{
+                const {id,pw} =res.data;
+            })
+
+            
+
+            //2. 값을 데이터베이스에 추가한다.
+            //3.id값을 가져와 가입완료 메세지를 추가한다.
+        }
+    </script>
+</body>
+</html>

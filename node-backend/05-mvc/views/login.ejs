@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="kr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test02</title>
+    <style>
+        .button{
+            width: 300px;
+            height: 50px;
+            color: white;
+            background-color: rgb(57, 135, 57);
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+</head>
+<body>
+    <h1>로그인</h1>
+    <form name="register">
+        <fieldset>
+            <legend>ID로그인</legend>
+            아이디<input type="text" name="id"/>
+            <br/>
+            비밀번호<input type="password" name="pw"/>
+            <br/>
+
+            <button class="button" type="button" onclick="axiosPost()">
+                로그인
+            </button>
+
+        </fieldset>
+
+
+    </form>
+    <div id="result"></div>
+
+
+
+    <script>
+        function getData() {
+        const form = document.forms["register"];//폼을 선택 한다.
+
+        
+
+        const data = {
+          id: form.id.value,
+          pw: form.pw.value,
+          
+        }
+
+        return data;
+      }
+        async function axiosPost() {
+
+            
+            const data = getData();
+            
+            const res = await axios({
+            method: "POST",
+            url: "/axios",
+            data: data,
+            })
+
+
+           //색상 변경
+           let color =res.data.success ?"blue":"red";
+
+            $("#result").html(`axios post 요청 성공 !!${res.data.msg}!!`).css("color",color);
+
+            
+        }
+    </script>
+</body>
+</html>
