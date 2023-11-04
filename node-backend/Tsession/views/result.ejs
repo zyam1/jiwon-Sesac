@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <title>입장</title>
+</head>
+<body>
+    <div class="checkSession"></div>
+    <script>
+        var user = '<%= user %>';
+        if (user) {
+            // 세션이 존재하면 환영 메시지 출력
+            $(".checkSession").html(user + ' 님 환영합니다');
+        } else {
+            // 세션이 존재하지 않으면 로그인 페이지로 이동
+            $(".checkSession").html('<a href="/set">로그인 해주세요</a>');
+        }
+
+
+        
+
+    </script>
+</body>
+</html>

@@ -23,4 +23,7 @@ db.Visitor = require("./Visitor")(sequelize, Sequelize);//db안에Visitor호출 
 
 // db.User = require("./User")(sequelize, Sequelize);처럼 나중에 코드가 확장됨
 
+//----------------------------회원가입, 로그인 기능------------------
+db.User = require("./UserSQ")(sequelize, Sequelize);
+
 module.exports = db;

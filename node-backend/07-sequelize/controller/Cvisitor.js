@@ -18,7 +18,7 @@ exports.visitor = (req, res) => {
 // POST /visitor => 방명록 insert
 exports.postVisitor = async(req, res) => {
     const data = {
-        username:req.body.comment,
+        username:req.body.username,
         comment:req.body.comment
     }
     // Visitor.create(data)
