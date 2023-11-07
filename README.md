@@ -4,3 +4,4 @@
 작성일 : 230912
 
 git branch test
+git branch test2
