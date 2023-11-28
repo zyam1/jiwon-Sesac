@@ -1,0 +1,14 @@
+/* (css 파일을 여러곳에서 사용할 시)BEM 네이밍 규칙 지키기*/
+.test-css{
+  background-color: yellow;
+  font-size: 30px;
+}
+
+.Section__section {
+  margin-bottom: 20px;
+  border : 2px solid rgb(78, 78, 135)
+}
+
+.food-color{
+  color: red;
+}
