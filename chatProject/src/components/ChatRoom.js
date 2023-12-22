@@ -4,7 +4,7 @@ import Chat from "./Chat";
 import Notice from "./Notice";
 import io from "socket.io-client";
 
-const socket = io.connect("http://localhost:8000", { autoConnect: false });
+const socket = io.connect("http://localhost:8000/chatRoom1", { autoConnect: false });
 export default function ChatRoom() {
   const [msgInput, setMsgInput] = useState("");
   const [userIdInput, setUserIdInput] = useState("");
