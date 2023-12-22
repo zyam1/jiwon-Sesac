@@ -6,8 +6,8 @@ import "../styles/chat.css";
 import { Link } from "react-router-dom";
 
 //props를 사용할것인지 아니면 redux를 사용해서 관리할것인지 생각해보기
-export default function GoChatRoom(link,color){
-    // const { color } = props;
+export default function GoChatRoom(props){
+    const { color, link } = props;
    return(<>
         <Link to={`chatRoom${link}`}>
             <div  className="go-chat-room" style={{backgroundColor:color}}></div>

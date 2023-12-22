@@ -19,10 +19,36 @@ const chatRoom1 = io.of("/chatRoom1");//chat룸 네임 스페이스 만들기
 const chatRoom2 = io.of("/chatRoom2");
 const chatRoom3 = io.of("/chatRoom3");
 //이런식으로 적으면 방 3개를 만든느낌 
+const userIdArr = {
+  chatRoom1: {}, // chatRoom1에 속한 사용자 정보
+  chatRoom2: {}, // chatRoom2에 속한 사용자 정보
+  chatRoom3: {}, // chatRoom3에 속한 사용자 정보
+};
 
 chatRoom1.on("connection",(socket)=>{
     // 네임스페이스에 속한 connection1 입장에 관한 이벤트 처리 로직
-    
+
+    //아래를 ChatRoom1이랑 연관된 로직으로 바꿔줘야함
+    if (Object.values(userIdArr.chatRoom1).includes(res.userId)) {
+      //닉네임이 중복될 경우에
+      socket.emit("error", {
+        msg: "중복된 아이디가 존재하여 입장이 불가합니다.",
+      });
+    } else {
+      //중복되지 않을 경우에
+      io.emit("notice", { msg: `${res.userId}님이 입장하셨습니다.` });
+      socket.emit("entrySuccess", { userId: res.userId });
+      userIdArr.chatRoom1[socket.id] = res.userId;
+      updateUserList("chatRoom1");
+    }
+    console.log(userIdArr.chatRoom1);
+    //연결을 끊었을때
+    socket.on("disconnect", () => {
+      chatRoom1.emit("notice", { msg: `${userIdArr.chatRoom1[socket.id]}님이 퇴장하셨습니다.` });
+      delete userIdArr.chatRoom1[socket.id];
+      updateUserList("chatRoom1");
+    });
+
 })
 
 let Message = {
@@ -36,8 +62,8 @@ let Message = {
 
 //나중에 프론트에서 특정div를 눌렀을때 특정 방에 join 할 수 있게 만들기.(파일을 나눠야 하나...)
 
-const userIdArr = {};
-// { "socket.id": "userIda", "socket.id": "userIdb" ,"socket.id": "userIdc"  }
+// const userIdArr = {};
+// // { "socket.id": "userIda", "socket.id": "userIdb" ,"socket.id": "userIdc"  }
 
 const updateUserList = () => {
   io.emit("userList", userIdArr);
