@@ -92,7 +92,7 @@ export default function ChatRoom() {
   };
   return (
     <>
-      <h3>실습 4, 5번</h3>
+      <h3>1번 채팅방</h3>
       <ul>
         <li>채팅창 메세지 전송</li>
         <li>DM 기능 구현</li>

@@ -30,7 +30,7 @@ chatRoom1.on("connection", (socket) => {
         msg: "중복된 아이디가 존재하여 입장이 불가합니다.",
       });
     } else {
-      io.emit("notice", { msg: `${res.userId}님이 입장하셨습니다.` });
+      io.emit("notice", { msg: `${res.userId}님이 chatRoom1에 입장하셨습니다.` });
       socket.emit("entrySuccess", { userId: res.userId });
       chatRoom1Users[socket.id] = res.userId;
       updateUserList("chatRoom1");
