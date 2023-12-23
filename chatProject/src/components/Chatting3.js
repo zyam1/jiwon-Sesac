@@ -92,12 +92,7 @@ export default function Chatting3() {
   };
   return (
     <>
-      <h3>실습 4, 5번</h3>
-      <ul>
-        <li>채팅창 메세지 전송</li>
-        <li>DM 기능 구현</li>
-      </ul>
-
+    
       {userId ? (
         <>
           <div>{userId}님 환영합니다.</div>

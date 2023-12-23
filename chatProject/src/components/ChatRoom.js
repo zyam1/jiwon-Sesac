@@ -3,11 +3,15 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import Chat from "./Chat";
 import Notice from "./Notice";
 import io from "socket.io-client";
+import { useSelector } from 'react-redux';
 
-const socket = io.connect("http://localhost:8000/chatRoom1", { autoConnect: false });
-export default function ChatRoom() {
-  const [msgInput, setMsgInput] = useState("");
-  const [userIdInput, setUserIdInput] = useState("");
+
+
+export default function ChatRoom(props) {
+const {number} = props; 
+const socket = io.connect(`http://localhost:8000/chatRoom${number}`, { autoConnect: false });
+const [msgInput, setMsgInput] = useState("");
+ const Rnickname = useSelector((state) => state.nickname);
   const [chatList, setChatList] = useState([]);
   const [userId, setUserId] = useState(null);
   const [userList, setUserList] = useState({});
@@ -88,19 +92,34 @@ export default function ChatRoom() {
 
   const entryChat = () => {
     initSocketConnect();
-    socket.emit("entry", { userId: userIdInput });
+    socket.emit("entry", { userId:  Rnickname });
   };
+  useEffect(() => {
+    socket.on("error", (res) => {
+      alert(res.msg);
+    });
+  
+    socket.on("entrySuccess", (res) => {
+      setUserId(res.userId);
+    });
+  
+    socket.on("userList", (res) => {
+      setUserList(res);
+    });
+  
+    // 채팅방에 입장할 때 서버에 정보 전달
+    entryChat();
+  
+  }, [])
+
   return (
     <>
       <h3>1번 채팅방</h3>
-      <ul>
-        <li>채팅창 메세지 전송</li>
-        <li>DM 기능 구현</li>
-      </ul>
-
-      {userId ? (
+     
+      {Rnickname ? (
         <>
-          <div>{userId}님 환영합니다.</div>
+          
+          <div>{Rnickname}님 환영합니다.</div>
           <div className="chat-container">
             {chatList.map((chat, i) => {
               if (chat.type === "notice") return <Notice key={i} chat={chat} />;
@@ -120,18 +139,7 @@ export default function ChatRoom() {
             <button onClick={sendMsg}>전송</button>
           </div>
         </>
-      ) : (
-        <>
-          <div className="input-container">
-            <input
-              type="text"
-              value={userIdInput}
-              onChange={(e) => setUserIdInput(e.target.value)}
-            />
-            <button onClick={entryChat}>입장</button>
-          </div>
-        </>
-      )}
+      ) : {}}
     </>
   );
 }

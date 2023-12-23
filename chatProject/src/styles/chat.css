@@ -48,11 +48,17 @@
 /* 내가 만든 부분 */
 
 .go-chat-room{
-  display:inline-block;
+ 
   width: 371px;
   height: 186px;
   /* background-color: #C549F9; */
   border-radius: 13px;
   cursor: pointer;
   margin: 30px;
+  box-shadow: 2px 2px 10px 0px #c6c6c6;
+}
+
+.room-box{
+  display: flex;
+  flex-direction: column;
 }

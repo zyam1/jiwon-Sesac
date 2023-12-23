@@ -35,7 +35,7 @@ chatRoom1.on("connection", (socket) => {
       chatRoom1Users[socket.id] = res.userId;
       updateUserList("chatRoom1");
     }
-    console.log(chatRoom1Users);
+    console.log("채팅방1유저",chatRoom1Users);
 
     socket.on("disconnect", () => {
       chatRoom1.emit("notice", { msg: `${chatRoom1Users[socket.id]}님이 퇴장하셨습니다.` });
