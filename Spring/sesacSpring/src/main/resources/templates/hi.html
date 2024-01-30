@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Hi</title>
+</head>
+<body>
+<h1>안녕</h1>
+<p th:text="${name}">코딩온</p>
+<p th:text="${key}">새싹</p>
+<p th:utext="${name2}"></p>
+<input type="text" th:value="${name}">
+<button th:text="${name}"></button>
+
+<h5>th:with를 이용한 변수 지정</h5>
+<div th:with="temp=${name}" th:text="${temp}"></div>
+
+<h5>th:switch - switch-case</h5>
+<div th:switch="${name}">
+    <p th:case="'코딩온'">코딩온 입니다</p>
+    <p th:case="'새싹'">새싹 입니다</p>
+    <p th:case="*">코딩온도 새싹도 아닙니다</p>
+</div>
+
+<h5>=====실습=====</h5>
+
+<p th:if="${age}>19" th:text="${age}+'세는 성인 입니다'" style="color:green"></p>
+<p th:unless="${age}>19" th:text="${age}+'세는 미성년자 입니다'" style="color:blue"></p>
+
+<h5>=====실습2=====</h5>
+
+</body>
+</html>
