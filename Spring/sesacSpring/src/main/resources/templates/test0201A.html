@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+</body>
+</html><!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <title>Test Form</title>
+</head>
+<body>
+
+<form action="/testform" method="post">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required>
+
+    <label >성별:</label>
+    <label><input type="radio" name="gender" value="male" > 남자</label>
+    <label><input type="radio" name="gender" value="female" > 여자</label>
+
+    <label for="birth">Birth:</label>
+    <input type="month" id="birth" name="birth" required>
+
+    <label for="hobby">취미:</label>
+    <select id="hobby" name="hobby" required>
+        <option value="reading" >독서</option>
+        <option value="gaming" >게임</option>
+        <option value="sports" >운동</option>
+    </select>
+
+    <button type="submit">회원가입</button>
+</form>
+
+</body>
+</html>
